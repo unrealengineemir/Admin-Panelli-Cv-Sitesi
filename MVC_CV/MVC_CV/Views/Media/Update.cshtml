@@ -1,0 +1,41 @@
+﻿@model MVC_CV.Models.Entity.TBL_MEDİA
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<form method="post">
+
+    <div>
+
+        <label>Ad</label>
+        @Html.TextBoxFor(m => m.NAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.NAME , "" , new {@style="color:red"})
+
+    </div>
+
+    <div>
+
+        <label>Link</label>
+        @Html.TextBoxFor(m => m.LİNK, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NAME, "", new { @style = "color:blue" })
+
+    </div>
+
+    <div>
+
+        <label>İkon</label>
+        @Html.TextBoxFor(m => m.İCON, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NAME, "", new { @style = "color:blue" })
+
+    </div>
+
+    <br />  
+
+    <button class="btn btn-success">Güncelle</button>
+
+</form>
+

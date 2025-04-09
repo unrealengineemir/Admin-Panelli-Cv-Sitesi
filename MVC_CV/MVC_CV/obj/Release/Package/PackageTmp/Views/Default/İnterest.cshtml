@@ -1,0 +1,21 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_İNTEREST>
+
+
+
+
+
+<section class="resume-section" id="interests">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Hobİlerİm</h2>
+        @foreach (var x in Model)
+        {
+
+            
+            <p><i class="fas fa-trophy text-success"></i> @x.DESCRİPTİON1</p>
+            <p class="mb-0"><i class="fas fa-trophy text-success"></i> @x.DESCRİPTİON2</p>
+
+        }
+
+    </div>
+</section>

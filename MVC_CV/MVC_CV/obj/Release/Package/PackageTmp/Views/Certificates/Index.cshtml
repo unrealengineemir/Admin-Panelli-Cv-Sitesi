@@ -1,0 +1,85 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_CERTIFICATES>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        @foreach (var x in Model)
+                        {
+                            <div class="card-body">
+
+
+
+                                <!-- /.tab-pane -->
+                                <div class="tab-pane" id="timeline">
+                                    <!-- The timeline -->
+                                    <div class="timeline timeline-inverse">
+                                        <!-- timeline time label -->
+                                        <div class="time-label">
+
+                                            @if (Convert.ToDouble(x.DATE) % 2 == 1)
+                                            {
+
+
+                                                <a href="/Certificates/Update/@x.ID" class="btn btn-primary">
+                                                    <span class="bg-primary">
+                                                        @x.DATE
+                                                    </span>
+                                                </a>
+
+                                            }
+                                            @if (Convert.ToDouble(x.DATE) % 2 == 0)
+                                            {
+
+
+                                                <a href="/Certificates/Update/@x.ID" class="btn btn-success">
+                                                    <span class="bg-success">
+                                                        @x.DATE
+                                                    </span>
+                                                </a>
+
+                                            }
+                                        </div>
+                                        <!-- /.timeline-label -->
+                                        <!-- timeline item -->
+                                        <div>
+                                            <a href="/Certificates/Delete/@x.ID"><i style="color:red" class="fas fa-trash"></i></a>
+
+                                            <div class="timeline-item">
+                                                <div class="timeline-body">
+                                                    @x.DESCRİPTİON
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+
+    <a href="/Certificates/Add/" class="btn btn-info"><i class="fa fa-plus-circle" aria-hidden="true"></i> Yeni Sertifika Ekle</a>
+
+</body>
+</html>
+
+

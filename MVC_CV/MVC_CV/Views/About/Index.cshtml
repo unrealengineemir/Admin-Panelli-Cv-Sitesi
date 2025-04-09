@@ -1,0 +1,51 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_ABOUT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h3 style="color:#808080; text-align:center">Deneyim Sayfası</h3>
+
+<form method="post">
+
+    @foreach (var x in Model)
+    {
+
+
+
+        <label>İsim</label>
+        <textarea class="form-control" name="NAME" rows="1">@x.NAME</textarea>
+        <br />
+
+        <label>Soyad</label>
+        <textarea class="form-control" name="SURNAME" rows="1">@x.SURNAME</textarea>
+        <br />
+
+        <label>Adres</label>
+        <textarea class="form-control" name="ADRESS" rows="1">@x.ADRESS</textarea>
+        <br />
+
+        <label>Telefon</label>
+        <textarea class="form-control" name="TELEPHONE" rows="1">@x.TELEPHONE</textarea>
+        <br />
+
+        <label>Mail</label>
+        <textarea class="form-control" name="MAİL" rows="1">@x.MAİL</textarea>
+        <br />
+
+        <label>Açıklama</label>
+        <textarea class="form-control" name="DESCRİPTİON" rows="1">@x.DESCRİPTİON</textarea>
+        <br />
+
+        <label>Resim</label>
+        <textarea class="form-control" name="İMAGE" rows="1">@x.İMAGE</textarea>
+        <br />
+    }
+
+    <button class="btn btn-success">Güncelle</button>
+
+</form>
+

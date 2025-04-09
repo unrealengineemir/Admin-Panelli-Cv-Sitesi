@@ -1,0 +1,75 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_COMMUNİCATİON>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                          
+
+
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="timeline">
+                                <!-- The timeline -->
+                                <div class="timeline timeline-inverse">
+                                    @foreach (var x in Model)
+                                    {
+
+                                    
+                                    <!-- timeline time label -->
+                                    <div class="time-label">
+
+
+                                        
+                                            <span class="bg-info">
+                                                @(((DateTime)x.DATE).ToString("dd-MMM-yyyy"))
+                                            </span>
+                                       
+
+                                    </div>
+                                    <!-- /.timeline-label -->
+                                    <!-- timeline item -->
+                                    <div>
+                                        <i class="fas fa-comments bg-warning"></i>
+                                    
+
+                                        <div class="timeline-item">
+
+                                            <span class="time"><i class="fa fa-envelope" aria-hidden="true"></i> @x.MAİL</span>
+                                            <h3 class="timeline-header"><a href="#"> @x.FULLNAME</a> @x.SUBJECT</h3>
+                                            <div class="timeline-body">
+                                              @x.MESSAGE
+                                            </div>                                        
+                                        </div>
+                                    </div>
+                                    }
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+</body>
+</html>
+
+

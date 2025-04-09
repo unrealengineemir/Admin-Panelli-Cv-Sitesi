@@ -1,0 +1,44 @@
+﻿@model MVC_CV.Models.Entity.TBL_EXPERİENCES
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h3 style="color:#00c31e; text-align:center">Deneyim Güncelleme Sayfası</h3>
+
+
+<form method="post">
+
+
+    @*@Html.Label("ID")
+        @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })*@
+
+    <br />
+
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(m => m.TİTLE, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.TİTLE, "", new { @style = "color:red" })
+
+
+    <br />
+    @Html.Label("Altbaşlık")
+    @Html.TextBoxFor(x => x.SUBTİTLE, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.SUBTİTLE, "", new { @style = "color:red" })
+
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.DATE, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.DATE, "", new { @style = "color:red" })
+
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.DESCRİPTİON, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.DESCRİPTİON, "", new { @style = "color:red" })
+
+    <br />
+
+    <button class="btn btn-success">Güncelle</button>
+
+</form>
+

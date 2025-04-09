@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CvDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBL_ABOUT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="30" />
+    <Property Name="SURNAME" Type="varchar" MaxLength="30" />
+    <Property Name="ADRESS" Type="varchar" MaxLength="100" />
+    <Property Name="TELEPHONE" Type="varchar" MaxLength="20" />
+    <Property Name="MAİL" Type="varchar" MaxLength="50" />
+    <Property Name="DESCRİPTİON" Type="varchar(max)" />
+    <Property Name="İMAGE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TBL_ADMİN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="30" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TBL_CERTIFICATES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DATE" Type="varchar" MaxLength="30" />
+    <Property Name="DESCRİPTİON" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TBL_COMMUNİCATİON">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FULLNAME" Type="varchar" MaxLength="50" />
+    <Property Name="MAİL" Type="varchar" MaxLength="50" />
+    <Property Name="SUBJECT" Type="varchar" MaxLength="100" />
+    <Property Name="MESSAGE" Type="varchar" MaxLength="100" />
+    <Property Name="DATE" Type="date" />
+  </EntityType>
+  <EntityType Name="TBL_EDUCATİON">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TİTLE" Type="varchar" MaxLength="100" />
+    <Property Name="SUBTİTLE1" Type="varchar" MaxLength="100" />
+    <Property Name="SUBTİTLE2" Type="varchar" MaxLength="100" />
+    <Property Name="GNO" Type="varchar" MaxLength="10" />
+    <Property Name="DATE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TBL_EXPERİENCES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TİTLE" Type="varchar" MaxLength="100" />
+    <Property Name="SUBTİTLE" Type="varchar" MaxLength="100" />
+    <Property Name="DESCRİPTİON" Type="varchar(max)" />
+    <Property Name="DATE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TBL_İNTEREST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRİPTİON1" Type="varchar" MaxLength="500" />
+    <Property Name="DESCRİPTİON2" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TBL_MEDİA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="25" />
+    <Property Name="LİNK" Type="varchar" MaxLength="60" />
+    <Property Name="İCON" Type="varchar" MaxLength="40" />
+    <Property Name="Situation" Type="bit" />
+  </EntityType>
+  <EntityType Name="TBL_SKİLL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SKİLL" Type="varchar" MaxLength="100" />
+    <Property Name="DEGREE" Type="tinyint" />
+  </EntityType>
+  <EntityContainer Name="CvDatabaseModelStoreContainer">
+    <EntitySet Name="TBL_ABOUT" EntityType="Self.TBL_ABOUT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_ADMİN" EntityType="Self.TBL_ADMİN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_CERTIFICATES" EntityType="Self.TBL_CERTIFICATES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_COMMUNİCATİON" EntityType="Self.TBL_COMMUNİCATİON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_EDUCATİON" EntityType="Self.TBL_EDUCATİON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_EXPERİENCES" EntityType="Self.TBL_EXPERİENCES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_İNTEREST" EntityType="Self.TBL_İNTEREST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MEDİA" EntityType="Self.TBL_MEDİA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_SKİLL" EntityType="Self.TBL_SKİLL" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

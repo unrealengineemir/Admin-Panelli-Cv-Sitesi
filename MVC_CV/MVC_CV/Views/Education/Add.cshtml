@@ -1,0 +1,71 @@
+﻿@model MVC_CV.Models.Entity.TBL_EDUCATİON
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h3 style="color:blue; text-align:center">Eğitim Ekleme Sayfası</h3>
+
+
+
+<form method="post">
+
+    <div>
+
+        <label>Okul Seviyesi</label>
+        <input type="text" name="TİTLE" class="form-control" />
+        @Html.ValidationMessageFor(x => x.TİTLE, "", new { @style = "color:red" })
+
+    </div>
+
+    <br />
+
+    <div>
+
+        <label>Okul Adı</label>
+        <input type="text" name="SUBTİTLE1" class="form-control" />
+        @Html.ValidationMessageFor(x => x.SUBTİTLE1, "", new { @style = "color:red" })
+
+    </div>
+
+    <br />
+
+    <div>
+
+        <label>Okul Türü</label>
+        <input type="text" name="SUBTİTLE2" class="form-control" />
+        @Html.ValidationMessageFor(x => x.SUBTİTLE2, "", new { @style = "color:red" })
+
+    </div>
+
+    <br />
+
+
+    <div>
+
+        <label>Not Ortalaması</label>
+        <input type="text" name="GNO" class="form-control" />
+        @Html.ValidationMessageFor(x => x.GNO, "", new { @style = "color:green" })
+
+    </div>
+
+    <br />
+
+    <div>
+
+        <label>Tarih Aralığı</label>
+        <input type="text" name="DATE" class="form-control" />
+        @Html.ValidationMessageFor(x => x.DATE, "", new { @style = "color:red" })
+
+    </div>
+
+    <br />
+
+    <button class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i> Eğitim Bilgisi Ekle</button>
+
+
+
+</form>
+

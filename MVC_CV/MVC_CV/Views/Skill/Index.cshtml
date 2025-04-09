@@ -1,0 +1,134 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_SKİLL>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{string renk = "";}
+@{string labelrenk = ""; }
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 style="color:#808080 ; text-align:center">Yeteneklerim</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr style="text-align:center ; color:blueviolet">
+                                           
+                                            <th>Yetenekler</th>
+                                            <th width="600px">Derece</th>
+                                            <th style="width: 60px">% si</th>
+                                            <th width="150px">Güncelle</th>
+                                            <th width="150px">Sil</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var x in Model)
+                                        {
+
+                                            if (x.DEGREE >= 0 && x.DEGREE <= 30)
+                                            {
+                                                renk = "progress-bar bg-danger";
+                                                labelrenk = "badge bg-danger";
+                                            }
+
+                                            if (x.DEGREE >= 31 && x.DEGREE <= 55)
+                                            {
+
+                                                renk = "progress-bar bg-warning";
+                                                labelrenk = "badge bg-warning";
+
+                                            }
+
+                                            if (x.DEGREE >= 56 && x.DEGREE <= 75)
+                                            {
+
+                                                renk = "progress-bar bg-primary";
+                                                labelrenk = "badge bg-primary";
+
+                                            }
+
+                                            if (x.DEGREE >= 76 && x.DEGREE <= 100)
+                                            {
+
+                                                renk = "progress-bar bg-success";
+                                                labelrenk = "badge bg-success";
+
+
+                                            }
+
+
+                                            <tr>
+                                                
+                                                <td style="text-align:center;width:50px">@x.SKİLL</td>
+
+                                                <td>
+                                                    <div class="progress progress-xs " style="margin-top:15px">
+                                                        <div class="@renk" style="width: @x.DEGREE%"></div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span class="@labelrenk">@x.DEGREE%</span></td>
+
+                                                <td style="text-align:center ; width:200px">
+
+                                                    <a class="btn btn-warning btn-sm" href="/Skill/Update/@x.ID">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                        Güncelle
+                                                    </a>
+                                                    </td>
+                                                <td  style="text-align:center ; width:200px">
+
+
+                                                    <a class="btn btn-danger btn-sm" href="/Skill/Delete/@x.ID">
+                                                        <i class="fas fa-trash">
+                                                        </i>
+                                                        Sil
+                                                    </a>
+
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <div style="margin:0 0 0 10px">
+        
+            <a href="/Skill/Add/" class="btn btn-info"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Yeni Yetenek Ekle</a>
+    </div>
+        <!-- jQuery -->
+        <script src="../../plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../../dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="../../dist/js/demo.js"></script>
+</body>
+</html>
+
+

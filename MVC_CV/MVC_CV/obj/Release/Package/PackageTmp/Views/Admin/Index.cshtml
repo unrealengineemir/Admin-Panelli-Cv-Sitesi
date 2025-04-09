@@ -1,0 +1,48 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_ADMİN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<table class="table table-bordered" style="text-align:center">
+
+    <tr style="color:blueviolet">
+        <th>Kullanıcı Adı</th>
+        <th>Şifre</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.USERNAME</td>
+            <td>@item.PASSWORD</td>
+            <td><a href="Admin/Update/@item.ID" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Güncelle</a></td>
+
+            <td>
+                <a href="Admin/Delete/@item.ID" class="btn btn-danger">
+                    <i class="fas fa-trash">
+                    </i> Sil
+                </a>
+            </td>
+        </tr>
+
+    }
+
+
+
+
+
+</table>
+
+<br />
+
+<a href="~/Admin/Add/" class="btn btn-info"><i class="fa fa-plus-circle" aria-hidden="true"></i> Yeni Admin Ekle</a>

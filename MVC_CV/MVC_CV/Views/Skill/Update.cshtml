@@ -1,0 +1,35 @@
+﻿@model MVC_CV.Models.Entity.TBL_SKİLL
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h3 style="color:#00c31e; text-align:center">Yetenek Güncelleme Sayfası</h3>
+
+<form method="post">
+
+
+    <br />
+    <div>
+
+        <label>Yetenek</label>
+        @Html.TextBoxFor(m => m.SKİLL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SKİLL, "", new { @style = "color:red" })
+
+
+    </div>
+    <br />
+    <div>
+
+        <label>Yetenek Seviyesi</label>
+        @Html.TextBoxFor(m => m.DEGREE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DEGREE, "", new { @style = "color:red" })
+
+    </div>
+    <br />
+
+    <button class="btn btn-success">Güncelle</button>
+
+</form>
+

@@ -1,0 +1,55 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_EDUCATİON>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<table class="table table-bordered" style="text-align:center">
+
+    <tr style="color:blueviolet">
+
+        <th>Eğitim</th>
+        <th>Okul</th>
+        <th>Okul Türü</th>
+        <th>Not Ortalaması</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+
+    @foreach (var x in Model)
+    {
+
+
+        <tr>
+            <td>@x.TİTLE</td>
+            <td>@x.SUBTİTLE1</td>
+            <td>@x.SUBTİTLE2</td>
+            <td>@x.GNO</td>
+            <td>@x.DATE</td>
+
+            <td>
+                <a href="/Education/Update/@x.ID" class="btn btn-warning">
+                    <i class="fas fa-pencil-alt">
+                    </i> Güncelle
+                </a>
+            </td>
+
+            <td><a href="/Education/Delete/@x.ID" class="btn btn-danger">  <i class="fas fa-trash"></i> Sil</a></td>
+
+
+
+        </tr>
+
+
+    }
+
+</table>
+
+
+<a class="btn btn-info" href="/Education/Add/"><i class="fa fa-plus-circle" aria-hidden="true"></i> Eğitim Bilgisi Ekle</a>

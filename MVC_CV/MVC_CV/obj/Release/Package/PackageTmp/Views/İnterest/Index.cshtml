@@ -1,0 +1,40 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_İNTEREST>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<h3 style="color:#00c31e; text-align:center">Hobiler Sayfası</h3>
+<br />
+
+<form method="post">
+
+    @foreach (var item in Model)
+    {
+
+
+
+
+        <label>Normal Hobiler</label>
+ <textarea class="form-control" name="DESCRİPTİON1" rows="3" placeholder="Lütfen 500 karakterden fazla girmeyiniz">@item.DESCRİPTİON1</textarea>
+       
+
+        <br />
+        <br />
+
+        <label>Spor Hobileri</label>
+  <textarea class="form-control" name="DESCRİPTİON2" rows="3" placeholder="Lütfen 500 karakterden fazla girmeyiniz">@item.DESCRİPTİON2</textarea>
+
+
+    }
+
+    <br />
+
+        <button class="btn btn-success">Güncelle</button>
+
+    
+</form>
+

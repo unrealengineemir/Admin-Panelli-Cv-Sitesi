@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CvDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBL_ABOUT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SURNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ADRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MAİL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRİPTİON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="İMAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_ADMİN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PASSWORD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_CERTIFICATES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRİPTİON" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_COMMUNİCATİON">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAİL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUBJECT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MESSAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DATE" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TBL_EDUCATİON">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TİTLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SUBTİTLE1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SUBTİTLE2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_EXPERİENCES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TİTLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SUBTİTLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRİPTİON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_İNTEREST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRİPTİON1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRİPTİON2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_SKİLL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SKİLL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DEGREE" Type="Byte" />
+  </EntityType>
+  <EntityContainer Name="CvDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBL_ABOUT" EntityType="Self.TBL_ABOUT" />
+    <EntitySet Name="TBL_ADMİN" EntityType="Self.TBL_ADMİN" />
+    <EntitySet Name="TBL_CERTIFICATES" EntityType="Self.TBL_CERTIFICATES" />
+    <EntitySet Name="TBL_COMMUNİCATİON" EntityType="Self.TBL_COMMUNİCATİON" />
+    <EntitySet Name="TBL_EDUCATİON" EntityType="Self.TBL_EDUCATİON" />
+    <EntitySet Name="TBL_EXPERİENCES" EntityType="Self.TBL_EXPERİENCES" />
+    <EntitySet Name="TBL_İNTEREST" EntityType="Self.TBL_İNTEREST" />
+    <EntitySet Name="TBL_SKİLL" EntityType="Self.TBL_SKİLL" />
+    <EntitySet Name="TBL_MEDİA" EntityType="CvDatabaseModel.TBL_MEDİA" />
+  </EntityContainer>
+  <EntityType Name="TBL_MEDİA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="LİNK" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="İCON" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Situation" Type="Boolean" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,54 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_EXPERİENCES>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<table class="table table-bordered" style="text-align:center">
+
+
+    <tr style="color:blueviolet">
+
+        <th width="100px">Başlık </th>
+        <th>Altbaşlık</th>
+        <th width="500px">Açıklama</th>
+        <th width="220px">Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+<tr>
+
+    <td>@item.TİTLE</td>
+    <td>@item.SUBTİTLE</td>
+    <td>@item.DESCRİPTİON</td>
+    <td>@item.DATE</td>
+    <td>
+        <a href="/Experience/Update/@item.ID" class="btn btn-warning" style="margin-top:15px">
+            <i class="fas fa-pencil-alt">
+            </i> Güncelle
+        </a>
+    </td>
+    <td>
+        <a href="/Experience/Delete/@item.ID" class="btn btn-danger" style="margin-top:15px">
+            <i class="fas fa-trash">
+            </i> Sil
+        </a>
+    </td>
+
+</tr>
+
+    }
+
+</table>
+
+<a href="/Experience/Add" class="btn btn-info"><i class="fa fa-plus-circle" aria-hidden="true"></i> Yeni Deneyim Ekle</a>

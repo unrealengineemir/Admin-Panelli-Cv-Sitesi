@@ -1,0 +1,108 @@
+﻿@using MVC_CV.Models.Entity
+@model List<TBL_MEDİA>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="text-align:center">
+
+
+    <tr style="color:blueviolet">
+
+        <th>Ad</th>
+        <th>Link</th>
+        <th>İkon</th>
+        <th>Durum</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+
+    </tr>
+
+
+
+
+    @foreach (var x in Model)
+    {
+
+
+        <tr>
+            <td>@x.NAME</td>
+            <td>@x.LİNK</td>
+            <td>@x.İCON</td>
+
+            @if (x.Situation == true)
+            {
+                <td>Aktif</td>
+            }
+
+            else
+            {
+                <td>Pasif</td>
+            }
+
+            <td>
+                <a href="/Media/Update/@x.ID" class="btn btn-warning">
+                    <i class="fas fa-pencil-alt">
+                    </i> Güncelle
+                </a>
+            </td>
+            <td>
+                <a href="/Media/Delete/@x.ID" class="btn btn-danger">
+                    <i class="fas fa-trash">
+                    </i> Sil
+                </a>
+            </td>
+
+
+
+        </tr>
+    }
+
+
+
+
+
+
+</table>
+
+<button class="btn btn-info" data-toggle="modal" data-target="#modal1"><i class="fa fa-plus-circle" aria-hidden="true"></i> Sosyal Medya Hesabı Ekle</button>
+
+<div class="modal" id="modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Yeni Sosyal Medya Ekle</h2>
+            </div>
+            <form method="post" action="/Media/Add/">
+
+                <div class="modal-body">
+
+                    <label>Sosyal Medya İsmi</label>
+                    <input type="text" name="NAME" class="form-control" />
+
+
+                    <br />
+
+                    <label>Sosyal Medya Linki</label>
+                    <input type="text" name="LİNK" class="form-control" />
+
+                    <br />
+
+                    <label>Sosyal Medya İkonu</label>
+                    <input type="text" name="İCON" class="form-control" />
+
+                    <br />
+
+                    <button class="btn btn-primary">Ekle</button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+

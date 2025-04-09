@@ -1,0 +1,37 @@
+﻿@model MVC_CV.Models.Entity.TBL_CERTIFICATES
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h3 style="color:blue; text-align:center">Sertifika Ekleme Sayfası</h3>
+
+
+<form method="post">
+
+
+    <div>
+
+        <label>Tarih</label>
+        <input type="text" class="form-control" name="DATE" />
+        @Html.ValidationMessageFor(m => m.DATE, "", new { @style = "color:red" })
+
+    </div>
+
+    <br />
+
+    <div>
+
+        <label>Açıklama</label>
+        <input type="text" class="form-control" name="DESCRİPTİON" />
+        @Html.ValidationMessageFor(m => m.DATE, "", new { @style = "color:red" })
+
+    </div>
+
+    <br />
+
+    <button class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i> Sertifika Ekle</button>
+
+
+</form>
